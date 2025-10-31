@@ -1,73 +1,104 @@
-# React + TypeScript + Vite
+# RMDify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, minimalist markdown editor built with React and TypeScript. Create, edit, and export markdown documents with a clean, distraction-free interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Real-time markdown preview with syntax highlighting
+- Auto-save functionality with local storage persistence
+- Export to multiple formats: Markdown, TXT, HTML, and PDF
+- Document management with starring and organization
+- Responsive design for desktop and mobile devices
+- Dark and light theme support
+- Offline-first architecture
 
-## React Compiler
+## Getting Started
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js 18 or higher
+- npm or yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# Clone the repository
+git clone https://github.com/TADSTech/rmdify.git
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Navigate to the project directory
+cd rmdify
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+The production-ready files will be generated in the `dist` directory.
+
+## Usage
+
+### Creating Documents
+
+1. Click "New Document" from the sidebar
+2. Enter your markdown content in the editor
+3. Toggle between Editor and Preview tabs to see your formatted output
+4. Documents auto-save every 3 seconds
+
+### Managing Documents
+
+- Star important documents for quick access
+- View recent documents sorted by last modified date
+- Delete documents with confirmation dialog
+- Open existing markdown files from your system
+
+### Exporting
+
+1. Click the "Export" button
+2. Choose your desired format (MD, TXT, HTML, or PDF)
+3. Enter a filename and confirm
+
+## Technology Stack
+
+- React 19 with TypeScript
+- Vite for build tooling
+- React Router for navigation
+- Framer Motion for animations
+- react-markdown for rendering
+- react-syntax-highlighter for code blocks
+- jsPDF for PDF generation
+- Tailwind CSS v4 for styling
+
+## Development
+
+```bash
+# Run development server
+npm run dev
+
+# Type checking
+npm run typecheck
+
+# Linting
+npm run lint
+
+# Preview production build
+npm run preview
+```
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contributing
+
+Contributions are welcome. Please open an issue or submit a pull request for any improvements or bug fixes. You can also send me an email to be added as a **Collaborator** at motrenewed@gmail.com
+
